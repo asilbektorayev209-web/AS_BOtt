@@ -1,35 +1,9 @@
-# Render.com — Background Worker (Web Service EMAS!)
-# Telegram polling bot HTTP port talab qilmaydi.
-
 services:
   - type: worker
-    name: x-dubbing-bot
+    name: AS_BOtt
     runtime: python
-    plan: starter
     buildCommand: pip install -r requirements.txt
     startCommand: python -m bot.main
     envVars:
-      - key: BOT_TOKEN
-        sync: false
-      - key: MAIN_ADMIN_ID
-        value: "6857570089"
-      - key: PRIVATE_GROUP_ID
-        sync: false
-      - key: CHANNEL_LINK
-        value: https://t.me/+bUQj_WkfOAphNzMy
-      - key: CHANNEL_USERNAME
-        value: FxDubbing
-      - key: SUPPORT_USERNAME
-        value: X_Dubbing_Support
-      - key: SUPPORT_PHONE
-        value: "+998880823927"
-      - key: PAYMENT_CARD
-        value: "5614 6816 2654 6851"
-      - key: PAYMENT_NAME
-        value: "N. F"
-      - key: DATABASE_PATH
-        value: /var/data/bot.db
-    disk:
-      name: bot-data
-      mountPath: /var/data
-      sizeGB: 1
+      - key: PYTHON_VERSION
+        value: 3.11.0
